@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>API Данные</title></head>
+<body>
+<h1>Пользователи с API</h1>
+{% for user in users %}
+    <div class="card">
+        <strong>{{ user.name }}</strong> ({{ user.email }})<br>
+        Город: {{ user.address.city }}
+    </div>
+{% endfor %}
+<a href="{% url 'index' %}">На главную</a>
+</body>
+</html>

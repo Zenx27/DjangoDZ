@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <style>
+        nav, footer { background: #333; color: white; padding: 10px; }
+        nav a { color: white; margin-right: 10px; text-decoration: none; }
+        .card { border: 1px solid #ccc; margin: 10px; padding: 10px; border-radius: 5px; }
+        ul li ul { margin-left: 20px; }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="{% url 'index' %}">Главная</a>
+    <a href="{% url 'about' %}">О нас</a>
+    <a href="{% url 'api' %}">Пользователи</a>
+</nav>
+
+<h1>Главная страница</h1>
+
+<ul>
+    <li>Голкиперы
+        <ul><li>А.Беккер</li></ul>
+    </li>
+    <li>Защитники
+        <ul><li>Ван Дейк</li></ul>
+    </li>
+</ul>
+
+<div class="card">
+    <h2>Карточка игрока</h2>
+    <p>Имя: Салах</p>
+    <p>Позиция: Нападающий</p>
+</div>
+
+<footer>
+    <p>&copy; 2025 Мой сайт</p>
+</footer>
+</body>
+</html>
+

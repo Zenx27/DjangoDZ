@@ -1,0 +1,28 @@
+<h2>{{ course.title }}</h2>
+<p>{{ course.description }}</p>
+
+<h3>Студенты:</h3>
+<ul>
+{% for student in students %}
+    <li>{{ student.last_name }} {{ student.first_name }}</li>
+{% empty %}
+    <li>Нет студентов</li>
+{% endfor %}
+</ul>
+
+<h3>Записать студента:</h3>
+<form method="post" action="{% url 'enroll_student' %}">
+    {% csrf_token %}
+    <select name="student">
+        {% for s in all_students %}
+            <option value="{{ s.id }}">{{ s.last_name }} {{ s.first_name }}</option>
+        {% endfor %}
+    </select>
+    <input type="hidden" name="course" value="{{ course.id }}">
+    <button type="submit">Записать</button>
+</form>
+
+{% for message in messages %}
+    <p style="color:red;">{{ message }}</p>
+{% endfor %}
+
